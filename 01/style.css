@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: antiquewhite;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*agrego degradado al fondo*/
+    background: linear-gradient(90deg, rgba(238,174,202,1) 40%, rgb(164, 148, 233) 80%);
+    
+}
+.container{
+    background: linear-gradient(90deg, rgba(238,174,202,1) 10%, rgb(164, 148, 233) 100%);
+    /* cambie de lugar la linea que aplica el degradado */
+    height: 500px;
+    min-width: 500px;
+    /*añado*/
+    border-radius: 15%;
+}
+.cien{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.one{
+    height: 80%;
+    width: 10%;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    position: relative;
+    /* para posisionarse delante */
+    left: 6%;
+    z-index: 2;
+    filter: drop-shadow(1px 1px 9px #0000002f);
+}
+.detalle{
+    position: absolute;
+    height: 30%;
+    width: 8%;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    transform: rotate(50deg);
+    /* tuve que modificar el porcentaje de left porque achique los 0 supongo*/
+    left: 20%;
+    top: 10%;
+    /* Añado */
+    z-index: 2;
+}
+/* Para crear una circunferencia perfecta el border-radius debe estar en el 50% */
+/* modifique lo valores para que no se vea el cero demasiado redondo */
+.cero_1{
+    height: 80%;
+    width: 25%;
+    border-radius: 48%;
+    background-color: antiquewhite;
+    /*Lo siguiente es para que cuando creemos el otro elementento, que será un pseudo elemento, se posicione en el toda la mitad de mi circunferencia*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: -3px;
+    filter: drop-shadow(1px 1px 9px #0000002f);
+    /* va a quedar por detras del uno*/
+    z-index: 1;
+}
+/*los "pseudo elementos" siempre se tratan con un content vacío*/
+.cero_1::after{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 35%;
+    border-radius: 48%;
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(218,174,202,1) 0%, rgb(209, 148, 233) 100%);
+    /* corregi el segundo color el violeta hacia el rojo */
+    z-index: 2;
+}
+.cero_2{
+    height: 80%;
+    width: 25%;
+    border-radius: 48%;
+    background-color: antiquewhite;
+    /*Lo siguiente es para que cuando creemos el otro elementento, que será un pseudo elemento, se posicione en el toda la mitad de mi circunferencia*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -3px;
+    filter: drop-shadow(1px 1px 9px #0000002f);
+    /* va a quedar por detras del uno*/
+    
+}
+/*los "pseudo elementos" siempre se tratan con un content vacío*/
+.cero_2::after{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 35%;
+    border-radius: 48%;
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgb(209, 148, 233) 0%, rgb(194, 148, 233) 100%);
+    /* AHORA corregi segundo color el rosa hacia el azul*/
+    z-index: 1;
+}
+
+.info{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info h1{
+    font-size: 10rem;
+    line-height: 70%;
+}
+.info p{
+    font-size: 3rem;
+    font-weight: bold;
+}
